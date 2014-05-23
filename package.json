@@ -1,0 +1,42 @@
+{
+  "name": "hubot-tabelog",
+  "description": "A script to pick up a restaurant",
+  "version": "0.0.1",
+  "author": "dtaniwaki",
+  "license": "MIT",
+
+  "keywords": [
+    "hubot",
+    "hubot-scripts"
+  ],
+
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/dtaniwaki/hubot-tabelog.git"
+  },
+
+  "bugs": {
+    "url": "https://github.com/dtaniwaki/hubot-tabelog/issues"
+  },
+
+  "dependencies": {
+    "coffee-script": "~1.6",
+    "underscore": "*",
+    "cheerio": "*",
+    "request": "*"
+  },
+
+  "devDependencies": {
+    "hubot": "*",
+    "mocha": "*",
+    "chai": "*",
+    "sinon-chai": "*",
+    "sinon": "*"
+  },
+
+  "main": "index.coffee",
+
+  "scripts": {
+    "test": "script/test"
+  }
+}
