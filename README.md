@@ -1,6 +1,6 @@
 # Hubot Tabelog
 
-[![NPM version](https://badge.fury.io/js/hubot-tabelog.svg)](http://badge.fury.io/js/hubot-tabelog) [![Build Status](https://travis-ci.org/dtaniwaki/hubot-tabelog.png)](https://travis-ci.org/dtaniwaki/hubot-tabelog)
+[![NPM version](https://badge.fury.io/js/hubot-tabelog.svg)](http://badge.fury.io/js/hubot-tabelog) [![Build Status](https://travis-ci.org/dtaniwaki/hubot-tabelog.png)](https://travis-ci.org/dtaniwaki/hubot-tabelog) [![Coverage Status](https://coveralls.io/repos/dtaniwaki/hubot-tabelog/badge.png?branch=master)](https://coveralls.io/r/dtaniwaki/hubot-tabelog?branch=master)
 
 Pick up a restaurant to go randomly
 

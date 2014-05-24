@@ -11,7 +11,6 @@ describe 'tabelog', ->
 
     require('../src/tabelog')(@robot)
 
-  # TODO: Add tests
-  # it 'respond to a message', ->
-  #   expect(@robot.respond).to.have.been.calledWith(/tabelog for/)
+  it 'respond to a message', ->
+    # TODO: Add tests
 
