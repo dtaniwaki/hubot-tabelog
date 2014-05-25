@@ -47,13 +47,14 @@ module.exports = (robot) ->
       restaurant = _.sample(restaurants, 1)[0]
       console.log restaurant
       if restaurant
-        message = ''
-        message += restaurant.image + "\n"
-        message += restaurant.name
+        msg.send restaurant.image
+        messages = []
+        messages.push restaurant.name
         if restaurant.stars? and restaurant.stars != '' and restaurant.score? and restaurant.score != ''
-          message += ' (' + restaurant.stars + ' ' + restaurant.score + ')'
-        message += ' ' + restaurant.link
-      msg.reply message
+          messages.push restaurant.stars + ' ' + restaurant.score
+        messages.push restaurant.link
+        message = messages.join("\n")
+      msg.send message
 
   endpoint   = 'http://tabelog.com/rst/rstsearch'
 
