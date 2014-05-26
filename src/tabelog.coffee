@@ -15,6 +15,10 @@ _         = require 'underscore'
 cheerio   = require 'cheerio'
 request   = require 'request'
 
+if proxy = process.env.HUBOT_TABELOG_PROXY
+  console.log 'proxy: ' + proxy
+  request = request.defaults {'proxy': proxy}
+
 module.exports = (robot) ->
   robot.respond /tabelog(:? (lunch|dinner))?( for [^ ]+)?( (:?in|at) [^ ]+)?$/i, (msg) ->
     params = {}
