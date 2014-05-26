@@ -4,6 +4,8 @@
 
 Pick up a restaurant to go randomly
 
+![screenshot](screenshot.png)
+
 # Installation
 
 * install this npm package to your hubot repo
