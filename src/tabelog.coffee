@@ -90,4 +90,6 @@ module.exports = (robot) ->
             stars: $restaurant.find('.score-overall .star').text(),
           }
         callback restaurants
+      else
+        console.log error
 
