@@ -20,3 +20,24 @@ You can omit any of those like the followings.
 * `hubot tabelog`
 * `hubot tabelog for <keyword>`
 * `hubot tabelog in/at <area>`
+
+# Configuration
+
+You can set some environment variables for hubot-tabelog.
+
+### `HUBOT_TABELOG_PROXY`
+
+Use proxy to access Tabelog
+
+e.g.
+
+```bash
+HUBOT_TABELOG_PROXY=http://your.proxy.host:port hubot
+```
+
+# Known Issues
+
+- Some environments are disallowed to access Tabelog
+
+You might be able to access with proxy.
+
