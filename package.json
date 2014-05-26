@@ -1,7 +1,7 @@
 {
   "name": "hubot-tabelog",
   "description": "A script to pick up a restaurant",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "author": "dtaniwaki",
   "license": "MIT",
   "keywords": [
