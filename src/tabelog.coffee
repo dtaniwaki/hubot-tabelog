@@ -51,12 +51,12 @@ module.exports = (robot) ->
       restaurant = _.sample(restaurants, 1)[0]
       console.log restaurant
       if restaurant
-        msg.send restaurant.image
         messages = []
         messages.push restaurant.name
         if restaurant.stars? and restaurant.stars != '' and restaurant.score? and restaurant.score != ''
           messages.push restaurant.stars + ' ' + restaurant.score
         messages.push restaurant.link
+        messages.push restaurant.image
         message = messages.join("\n")
       msg.send message
 
