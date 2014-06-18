@@ -37,6 +37,8 @@ e.g.
 HUBOT_TABELOG_PROXY=http://your.proxy.host:port hubot
 ```
 
+You can pick up a free proxy listed [here](http://www.getproxy.jp/).
+
 ## Known Issues
 
 - Some environments are disallowed to access Tabelog
