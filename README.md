@@ -1,6 +1,9 @@
 # Hubot Tabelog
 
-[![NPM version](https://badge.fury.io/js/hubot-tabelog.svg)](http://badge.fury.io/js/hubot-tabelog) [![Dependency Status](https://david-dm.org/dtaniwaki/hubot-tabelog.svg)](https://david-dm.org/dtaniwaki/hubot-tabelog) [![Build Status](https://travis-ci.org/dtaniwaki/hubot-tabelog.png)](https://travis-ci.org/dtaniwaki/hubot-tabelog) [![Coverage Status](https://coveralls.io/repos/dtaniwaki/hubot-tabelog/badge.png)](https://coveralls.io/r/dtaniwaki/hubot-tabelog)
+[![NPM Version][npm-image]][npm-link]
+[![Dependency Status][deps-image]][deps-link]
+[![Build Status][build-image]][build-link]
+[![Coverage Status][cov-image]][cov-link]
 
 Pick up a restaurant to go randomly
 
@@ -56,3 +59,15 @@ You might be able to access with proxy.
 ## Copyright
 
 Copyright (c) 2014 Daisuke Taniwaki. See [LICENSE](LICENSE) for details.
+
+
+
+[npm-image]:   https://badge.fury.io/js/hubot-tabelog.svg
+[npm-link]:    http://badge.fury.io/js/hubot-tabelog
+[build-image]: https://secure.travis-ci.org/dtaniwaki/hubot-tabelog.png
+[build-link]:  http://travis-ci.org/dtaniwaki/hubot-tabelog
+[deps-image]:  https://david-dm.org/dtaniwaki/hubot-tabelog.svg
+[deps-link]:   https://david-dm.org/dtaniwaki/hubot-tabelog
+[cov-image]:   https://coveralls.io/repos/dtaniwaki/hubot-tabelog/badge.png
+[cov-link]:    https://coveralls.io/r/dtaniwaki/hubot-tabelog
+
