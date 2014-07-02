@@ -86,3 +86,14 @@ describe 'tabelog', ->
           done e
       adapter.receive new TextMessage(user, "hubot tabelog in 東京")
 
+    it 'replies tabelog lunch', (done)->
+      adapter.on "send", (envelope, strings)->
+        try
+          expect(strings).to.have.length(2)
+          expect(strings[0]).to.match /^http:\/\/.*\.jpg/
+          expect(strings[1]).to.match /tabelog.com/
+          do done
+        catch e
+          done e
+      adapter.receive new TextMessage(user, "hubot tabelog lunch")
+
