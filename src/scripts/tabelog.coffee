@@ -10,6 +10,7 @@
 #
 # Author:
 #   dtaniwaki
+'use strict'
 
 _         = require 'underscore'
 cheerio   = require 'cheerio'
@@ -51,14 +52,13 @@ module.exports = (robot) ->
       restaurant = _.sample(restaurants, 1)[0]
       console.log restaurant
       if restaurant
-        msg.send restaurant.image
         messages = []
         messages.push restaurant.name
         if restaurant.stars? and restaurant.stars != '' and restaurant.score? and restaurant.score != ''
           messages.push restaurant.stars + ' ' + restaurant.score
         messages.push restaurant.link
         message = messages.join("\n")
-      msg.send message
+      msg.send restaurant.image, message
 
   endpoint   = 'http://tabelog.com/rst/rstsearch'
 
