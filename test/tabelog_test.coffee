@@ -53,7 +53,7 @@ describe 'tabelog', ->
       ]
 
   describe 'respond tabelog', ->
-    it 'reply tabelog data', (done)->
+    it 'replies tabelog', (done)->
       adapter.on "send", (envelope, strings)->
         try
           expect(strings).to.have.length(2)
@@ -63,4 +63,26 @@ describe 'tabelog', ->
         catch e
           done e
       adapter.receive new TextMessage(user, "hubot tabelog")
+
+    it 'reply tabelog', (done)->
+      adapter.on "send", (envelope, strings)->
+        try
+          expect(strings).to.have.length(2)
+          expect(strings[0]).to.match /^http:\/\/.*\.jpg/
+          expect(strings[1]).to.match /tabelog.com/
+          do done
+        catch e
+          done e
+      adapter.receive new TextMessage(user, "hubot tabelog for ラーメン")
+
+    it 'replies tabelog with location', (done)->
+      adapter.on "send", (envelope, strings)->
+        try
+          expect(strings).to.have.length(2)
+          expect(strings[0]).to.match /^http:\/\/.*\.jpg/
+          expect(strings[1]).to.match /tabelog.com/
+          do done
+        catch e
+          done e
+      adapter.receive new TextMessage(user, "hubot tabelog in 東京")
 
