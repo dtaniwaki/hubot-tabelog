@@ -21,10 +21,6 @@ describe 'tabelog', ->
     robot.adapter.on "connected", ->
       robot.loadFile path.resolve('.', 'src', 'scripts'), 'tabelog.coffee'
 
-      # load help scripts to test help messages
-      hubotScripts = path.resolve 'node_modules', 'hubot', 'src', 'scripts'
-      robot.loadFile hubotScripts, 'help.coffee'
-    
       user = robot.brain.userForId '1', {
         name: 'dtaniwaki'
         room: '#mocha'
@@ -47,8 +43,6 @@ describe 'tabelog', ->
     it 'has help messages', ->
       commands = robot.helpCommands()
       expect(commands).to.eql [
-        "hubot help - Displays all of the help commands that Hubot knows about.",
-        "hubot help <query> - Displays all help commands that match <query>.",
         "hubot tabelog (<lunch|dinner>) for <keyword> in <area> - pick up a restaurant with the keyword in the area"
       ]
 
@@ -57,7 +51,7 @@ describe 'tabelog', ->
       adapter.on "send", (envelope, strings)->
         try
           expect(strings).to.have.length(2)
-          expect(strings[0]).to.match /^http:\/\/.*\.jpg/
+          expect(strings[0]).to.match /^https:\/\/.*\.jpg/
           expect(strings[1]).to.match /tabelog.com/
           do done
         catch e
@@ -68,7 +62,7 @@ describe 'tabelog', ->
       adapter.on "send", (envelope, strings)->
         try
           expect(strings).to.have.length(2)
-          expect(strings[0]).to.match /^http:\/\/.*\.jpg/
+          expect(strings[0]).to.match /^https:\/\/.*\.jpg/
           expect(strings[1]).to.match /tabelog.com/
           do done
         catch e
@@ -79,7 +73,7 @@ describe 'tabelog', ->
       adapter.on "send", (envelope, strings)->
         try
           expect(strings).to.have.length(2)
-          expect(strings[0]).to.match /^http:\/\/.*\.jpg/
+          expect(strings[0]).to.match /^https:\/\/.*\.jpg/
           expect(strings[1]).to.match /tabelog.com/
           do done
         catch e
@@ -90,7 +84,7 @@ describe 'tabelog', ->
       adapter.on "send", (envelope, strings)->
         try
           expect(strings).to.have.length(2)
-          expect(strings[0]).to.match /^http:\/\/.*\.jpg/
+          expect(strings[0]).to.match /^https:\/\/.*\.jpg/
           expect(strings[1]).to.match /tabelog.com/
           do done
         catch e
@@ -101,7 +95,7 @@ describe 'tabelog', ->
       adapter.on "send", (envelope, strings)->
         try
           expect(strings).to.have.length(2)
-          expect(strings[0]).to.match /^http:\/\/.*\.jpg/
+          expect(strings[0]).to.match /^https:\/\/.*\.jpg/
           expect(strings[1]).to.match /tabelog.com/
           do done
         catch e
