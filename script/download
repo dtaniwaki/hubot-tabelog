@@ -1,0 +1,53 @@
+#!/usr/bin/env node
+fs = require('fs')
+request = require('request')
+cheerio = require('cheerio')
+xlsx = require('xlsx')
+
+const categoriesURL = "http://tabelog.com/cat_lst/"
+request.get("http://tabelog.com/cat_lst/", (err, res, body)=> {
+  if(!err && res.statusCode == 200) {
+    $ = cheerio.load(body)
+    const mapping = {}
+    $('table a').each((i, a)=> {
+       const code = $(a).attr('href').match(/\/rstLst\/(.+)\//)[1]
+       const name = $(a).text()
+       console.log(`categories: ${name}: code => ${code}`)
+       mapping[name] = {code: code}
+    })
+    fs.writeFile('data/categories.json', JSON.stringify(mapping))
+  }
+})
+
+const areaURL = "http://www.romanticmissile.com/wp-content/uploads/2013/04/tabelog_area_list.xlsx"
+request.get(areaURL, {encoding: null}, (err, res, body)=> {
+  if(!err && res.statusCode == 200) {
+    data = new Uint8Array(body)
+    var arr = new Array()
+    for(var i = 0; i != data.length; ++i) arr[i] = String.fromCharCode(data[i])
+    var bstr = arr.join("")
+
+    const sheet = xlsx.read(bstr, {type: 'binary'}).Sheets['area_list']
+    const mapping = {}
+    var code1, code2, code3, city
+    for(z in sheet) {
+      if(match = z.match(/^([A-H])/)) {
+        const col = match[1]
+        if(col == 'A') {
+          city = sheet[z].v
+        } else if (col == 'C') {
+          code1 = sheet[z].v
+        } else if (col == 'E') {
+          code2 = sheet[z].v
+        } else if(col == 'G') {
+          code3 = sheet[z].v
+        } else if (col == 'H') {
+          const name = sheet[z].v
+          console.log(`areas: ${name}: city => ${city}, code1 => ${code1}, code2 => ${code2}, code3 => ${code3}`)
+          mapping[name] = {city: city, code1: code1, code2: code2, code3: code3}
+        }
+      }
+    }
+    fs.writeFile('data/areas.json', JSON.stringify(mapping))
+  }
+})
