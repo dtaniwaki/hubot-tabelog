@@ -42,7 +42,7 @@ module.exports = (robot) ->
        params.loc += '駅'
 
      if params.kw && !categories[params.kw]?
-       return msg.reply('Category ' + params.kw + ' does not exist. http://tabelog.com/cat_lst/')
+       return msg.reply('Category ' + params.kw + ' does not exist. See http://tabelog.com/cat_lst/')
      if params.loc && !areas[params.loc]?
        return msg.reply('Area ' + params.loc + ' does not exist.')
 
